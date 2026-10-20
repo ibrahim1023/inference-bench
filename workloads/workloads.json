@@ -1,0 +1,19 @@
+{
+  "workloads": [
+    {
+      "name": "short",
+      "prompt_tokens": 128,
+      "max_output_tokens": 64
+    },
+    {
+      "name": "medium",
+      "prompt_tokens": 512,
+      "max_output_tokens": 128
+    },
+    {
+      "name": "long",
+      "prompt_tokens": 2048,
+      "max_output_tokens": 256
+    }
+  ]
+}

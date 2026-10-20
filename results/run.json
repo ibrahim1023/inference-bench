@@ -1,0 +1,336 @@
+{
+  "metadata": {
+    "timestamp_utc": "2026-10-19T13:12:03.210947+00:00",
+    "model": {
+      "id_or_path": "mlx-community/Llama-3.2-3B-Instruct-4bit",
+      "resolved_path": "/Users/ibrahim/.cache/huggingface/hub/models--mlx-community--Llama-3.2-3B-Instruct-4bit/snapshots/7f0dc925e0d0afb0322d96f9255cfddf2ba5636e",
+      "revision": "7f0dc925e0d0afb0322d96f9255cfddf2ba5636e",
+      "model_type": "llama",
+      "quantization": {
+        "group_size": 64,
+        "bits": 4
+      }
+    },
+    "backend": {
+      "name": "mlx-lm",
+      "python_version": "3.12.11",
+      "mlx_version": "0.32.4",
+      "mlx_lm_version": "0.32.2",
+      "device": "Device(gpu, 0)"
+    },
+    "system": {
+      "macos_version": "27.0.1",
+      "macos_build": "26A434",
+      "chip": "Apple M4 Pro",
+      "total_ram_gib": 24.0,
+      "available_ram_gib_at_start": 8.27
+    },
+    "generation_settings": {
+      "decoding": "greedy (argmax, temperature=0.0)",
+      "streaming": true,
+      "batch_size": 1,
+      "shared_kv_cache": false,
+      "chat_template_used": false,
+      "eos_handling": "Stop immediately when token_id is in tokenizer.eos_token_ids; EOS token itself is not counted in output_tokens.",
+      "warmup_runs_per_workload": 1,
+      "measured_runs_per_workload": 3
+    },
+    "memory_measurement": {
+      "label": "peak MLX allocated memory",
+      "source": "mlx.core.get_peak_memory() after mlx.core.reset_peak_memory() per run",
+      "scope": "MLX Metal allocator peak allocated bytes (includes resident model weights and KV cache), not total macOS or process RSS memory",
+      "unit": "GiB (bytes / 2^30)"
+    }
+  },
+  "workloads": [
+    {
+      "name": "short",
+      "prompt_tokens": 128,
+      "max_output_tokens": 64
+    },
+    {
+      "name": "medium",
+      "prompt_tokens": 512,
+      "max_output_tokens": 128
+    },
+    {
+      "name": "long",
+      "prompt_tokens": 2048,
+      "max_output_tokens": 256
+    }
+  ],
+  "summaries": [
+    {
+      "workload": "short",
+      "target_prompt_tokens": 128,
+      "prompt_tokens": 128,
+      "max_output_tokens": 64,
+      "output_tokens_per_run": [
+        64,
+        64,
+        64
+      ],
+      "stop_reasons": [
+        "length",
+        "length",
+        "length"
+      ],
+      "early_stop_count": 0,
+      "median_ttft_ms": 156.68262500548735,
+      "median_total_latency_s": 0.703281624999363,
+      "median_decode_tokens_per_sec": 117.07870065261181,
+      "median_peak_memory_gib": 2.0608574338257313
+    },
+    {
+      "workload": "medium",
+      "target_prompt_tokens": 512,
+      "prompt_tokens": 512,
+      "max_output_tokens": 128,
+      "output_tokens_per_run": [
+        128,
+        128,
+        128
+      ],
+      "stop_reasons": [
+        "length",
+        "length",
+        "length"
+      ],
+      "early_stop_count": 0,
+      "median_ttft_ms": 573.7870000011753,
+      "median_total_latency_s": 1.7005700410081772,
+      "median_decode_tokens_per_sec": 113.30025694451375,
+      "median_peak_memory_gib": 2.321532431989908
+    },
+    {
+      "workload": "long",
+      "target_prompt_tokens": 2048,
+      "prompt_tokens": 2048,
+      "max_output_tokens": 256,
+      "output_tokens_per_run": [
+        256,
+        256,
+        256
+      ],
+      "stop_reasons": [
+        "length",
+        "length",
+        "length"
+      ],
+      "early_stop_count": 0,
+      "median_ttft_ms": 2352.4612090113806,
+      "median_total_latency_s": 4.85007804199995,
+      "median_decode_tokens_per_sec": 102.47175606865996,
+      "median_peak_memory_gib": 2.616765081882477
+    }
+  ],
+  "runs": [
+    {
+      "workload": "short",
+      "repetition": 1,
+      "target_prompt_tokens": 128,
+      "prompt_tokens": 128,
+      "max_output_tokens": 64,
+      "output_tokens": 64,
+      "stop_reason": "length",
+      "early_stop": false,
+      "ttft_ms": 156.28495799319353,
+      "total_latency_s": 0.7014997910009697,
+      "decode_tokens_per_sec": 117.38455101691412,
+      "peak_memory_gib": 2.0608574338257313,
+      "memory_metric_label": "peak MLX allocated memory",
+      "units": {
+        "ttft_ms": "milliseconds",
+        "total_latency_s": "seconds",
+        "decode_tokens_per_sec": "tokens/second",
+        "prompt_tokens": "tokens",
+        "output_tokens": "tokens",
+        "peak_memory_gib": "GiB (bytes / 2^30)"
+      }
+    },
+    {
+      "workload": "short",
+      "repetition": 2,
+      "target_prompt_tokens": 128,
+      "prompt_tokens": 128,
+      "max_output_tokens": 64,
+      "output_tokens": 64,
+      "stop_reason": "length",
+      "early_stop": false,
+      "ttft_ms": 156.68262500548735,
+      "total_latency_s": 0.703281624999363,
+      "decode_tokens_per_sec": 117.07870065261181,
+      "peak_memory_gib": 2.0608574338257313,
+      "memory_metric_label": "peak MLX allocated memory",
+      "units": {
+        "ttft_ms": "milliseconds",
+        "total_latency_s": "seconds",
+        "decode_tokens_per_sec": "tokens/second",
+        "prompt_tokens": "tokens",
+        "output_tokens": "tokens",
+        "peak_memory_gib": "GiB (bytes / 2^30)"
+      }
+    },
+    {
+      "workload": "short",
+      "repetition": 3,
+      "target_prompt_tokens": 128,
+      "prompt_tokens": 128,
+      "max_output_tokens": 64,
+      "output_tokens": 64,
+      "stop_reason": "length",
+      "early_stop": false,
+      "ttft_ms": 157.21804100030567,
+      "total_latency_s": 0.7061928750044899,
+      "decode_tokens_per_sec": 116.56724257962239,
+      "peak_memory_gib": 2.0608574338257313,
+      "memory_metric_label": "peak MLX allocated memory",
+      "units": {
+        "ttft_ms": "milliseconds",
+        "total_latency_s": "seconds",
+        "decode_tokens_per_sec": "tokens/second",
+        "prompt_tokens": "tokens",
+        "output_tokens": "tokens",
+        "peak_memory_gib": "GiB (bytes / 2^30)"
+      }
+    },
+    {
+      "workload": "medium",
+      "repetition": 1,
+      "target_prompt_tokens": 512,
+      "prompt_tokens": 512,
+      "max_output_tokens": 128,
+      "output_tokens": 128,
+      "stop_reason": "length",
+      "early_stop": false,
+      "ttft_ms": 573.7870000011753,
+      "total_latency_s": 1.6974156250071246,
+      "decode_tokens_per_sec": 113.92031491298864,
+      "peak_memory_gib": 2.321532431989908,
+      "memory_metric_label": "peak MLX allocated memory",
+      "units": {
+        "ttft_ms": "milliseconds",
+        "total_latency_s": "seconds",
+        "decode_tokens_per_sec": "tokens/second",
+        "prompt_tokens": "tokens",
+        "output_tokens": "tokens",
+        "peak_memory_gib": "GiB (bytes / 2^30)"
+      }
+    },
+    {
+      "workload": "medium",
+      "repetition": 2,
+      "target_prompt_tokens": 512,
+      "prompt_tokens": 512,
+      "max_output_tokens": 128,
+      "output_tokens": 128,
+      "stop_reason": "length",
+      "early_stop": false,
+      "ttft_ms": 570.856125006685,
+      "total_latency_s": 1.7005700410081772,
+      "decode_tokens_per_sec": 113.30025694451375,
+      "peak_memory_gib": 2.321532431989908,
+      "memory_metric_label": "peak MLX allocated memory",
+      "units": {
+        "ttft_ms": "milliseconds",
+        "total_latency_s": "seconds",
+        "decode_tokens_per_sec": "tokens/second",
+        "prompt_tokens": "tokens",
+        "output_tokens": "tokens",
+        "peak_memory_gib": "GiB (bytes / 2^30)"
+      }
+    },
+    {
+      "workload": "medium",
+      "repetition": 3,
+      "target_prompt_tokens": 512,
+      "prompt_tokens": 512,
+      "max_output_tokens": 128,
+      "output_tokens": 128,
+      "stop_reason": "length",
+      "early_stop": false,
+      "ttft_ms": 574.3754589930177,
+      "total_latency_s": 1.7146452089946251,
+      "decode_tokens_per_sec": 112.2494743758121,
+      "peak_memory_gib": 2.321532431989908,
+      "memory_metric_label": "peak MLX allocated memory",
+      "units": {
+        "ttft_ms": "milliseconds",
+        "total_latency_s": "seconds",
+        "decode_tokens_per_sec": "tokens/second",
+        "prompt_tokens": "tokens",
+        "output_tokens": "tokens",
+        "peak_memory_gib": "GiB (bytes / 2^30)"
+      }
+    },
+    {
+      "workload": "long",
+      "repetition": 1,
+      "target_prompt_tokens": 2048,
+      "prompt_tokens": 2048,
+      "max_output_tokens": 256,
+      "output_tokens": 256,
+      "stop_reason": "length",
+      "early_stop": false,
+      "ttft_ms": 2355.941540998174,
+      "total_latency_s": 4.843806707998738,
+      "decode_tokens_per_sec": 102.86446435909278,
+      "peak_memory_gib": 2.616765081882477,
+      "memory_metric_label": "peak MLX allocated memory",
+      "units": {
+        "ttft_ms": "milliseconds",
+        "total_latency_s": "seconds",
+        "decode_tokens_per_sec": "tokens/second",
+        "prompt_tokens": "tokens",
+        "output_tokens": "tokens",
+        "peak_memory_gib": "GiB (bytes / 2^30)"
+      }
+    },
+    {
+      "workload": "long",
+      "repetition": 2,
+      "target_prompt_tokens": 2048,
+      "prompt_tokens": 2048,
+      "max_output_tokens": 256,
+      "output_tokens": 256,
+      "stop_reason": "length",
+      "early_stop": false,
+      "ttft_ms": 2352.4612090113806,
+      "total_latency_s": 4.85007804199995,
+      "decode_tokens_per_sec": 102.47175606865996,
+      "peak_memory_gib": 2.616765081882477,
+      "memory_metric_label": "peak MLX allocated memory",
+      "units": {
+        "ttft_ms": "milliseconds",
+        "total_latency_s": "seconds",
+        "decode_tokens_per_sec": "tokens/second",
+        "prompt_tokens": "tokens",
+        "output_tokens": "tokens",
+        "peak_memory_gib": "GiB (bytes / 2^30)"
+      }
+    },
+    {
+      "workload": "long",
+      "repetition": 3,
+      "target_prompt_tokens": 2048,
+      "prompt_tokens": 2048,
+      "max_output_tokens": 256,
+      "output_tokens": 256,
+      "stop_reason": "length",
+      "early_stop": false,
+      "ttft_ms": 2341.5946250024717,
+      "total_latency_s": 4.853691042007995,
+      "decode_tokens_per_sec": 101.86937461253457,
+      "peak_memory_gib": 2.616765081882477,
+      "memory_metric_label": "peak MLX allocated memory",
+      "units": {
+        "ttft_ms": "milliseconds",
+        "total_latency_s": "seconds",
+        "decode_tokens_per_sec": "tokens/second",
+        "prompt_tokens": "tokens",
+        "output_tokens": "tokens",
+        "peak_memory_gib": "GiB (bytes / 2^30)"
+      }
+    }
+  ]
+}
